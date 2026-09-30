@@ -11,11 +11,21 @@ const loadLevelWord = (id) => {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            const activeButton = document.getElementById(`lesson-btn-${id}`)
-            activeButton.classList.add("active")
+            removeActive()
 
-            displayLevelWord(data.data)
+            const clickedBtn = document.getElementById(`lesson-btn-${id}`)
+            clickedBtn.classList.add("active")
+            // console.log(clickedBtn);
+
+            displayLevelWord(data.data);
         })
+}
+
+
+
+const removeActive = () => {
+    const lessonButtons = document.querySelectorAll(".lesson-btn")
+    lessonButtons.forEach(btn => btn.classList.remove("active"))
 }
 
 
