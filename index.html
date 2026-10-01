@@ -151,6 +151,7 @@
 
         <div id="level-container" class="flex gap-5 flex-wrap justify-center">
             <!-- Dynamically Generated Level Buttons -->
+
         </div>
 
     </section>
@@ -165,6 +166,7 @@
         class="bg-gray-100 p-10 w-11/12 mx-auto mt-10 mb-10 md:mb-[160px] rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5">
 
 
+
         <div class="font-bangla text-center bg-[#F8F8F8] col-span-full rounded-xl py-10 space-y-6">
             <p class="text-xl font-medium text-gray-500 ">
                 আপনি এখনো কোন Lesson Select করেন নি!
@@ -172,10 +174,30 @@
             <h2 class="text-4xl font-bold">একটি Lesson Select করুন।</h2>
         </div>
 
-
     </section>
 
 
+
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal.showModal()">open modal</button> -->
+
+    <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+
+            <div id="details-container" class="space-y-5 p-4 border border-sky-100 rounded-md">
+                <!-- dynamically -->
+            </div>
+
+            
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
 
 
 

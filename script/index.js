@@ -1,3 +1,9 @@
+const createElements = (array) => {
+    const htmlElements = array.map(el => `<span class="btn bg-sky-50 mr-1">${el}</span>`);
+    return (htmlElements.join(" "));
+}
+
+
 const loadLessons = () => {
     fetch("https://openapi.programming-hero.com/api/levels/all")
         .then(response => response.json())
@@ -82,9 +88,7 @@ const displayWordDetails = (word) => {
 
                 <div class="">
                     <h2 class="font-bold font-bangal mb-1">সমার্থক শব্দগুলো</h2>
-                    <span class="btn font-bangla bg-sky-50 mr-1"></span>
-                    <span class="btn font-bangla bg-sky-50 mr-1">Syno</span>
-                    <span class="btn font-bangla bg-sky-50">Syno</span>
+                    <div class="">${createElements(word.synonyms)}</div>
                 </div>
     
     `;

@@ -77,12 +77,64 @@ loadLevelWord er vitore--
         })
 
 ```
+ekhane asole ekhon ki hocceh? zokhon code ta removeActive() call hove tokhon sob level btn theke 
+active class ta remove hoye zabe......
+then.....clickedBtn e ese only clicked button  e active class set kore dibe
+
+
+```
+const loadWordDetail = async (id) => {
+    const url = `https://openapi.programming-hero.com/api/word/${id}`
+    const res = await fetch(url)
+    const details = await res.json()
+
+    displayWordDetails(details.data)
+}
+```
+
+
+display into modal
+```
+// words - received as an array
+const displayWordDetails = (words) => {
+    console.log(words);
+}
+```
+
+```
+showModal()
+document.getElementById("my_modal").showModal()
+```
+
+
+to synonyms :
+create a function on top
+```
+const createElements = (array) => {
+    const htmlElements = array.map(el => `<span class="btn">${el}</span>`);
+    return (htmlElements.join(" "));
+}
+```
+
+and 
+```
+ <div class="">
+    <h2 class="font-bold font-bangal mb-1">সমার্থক শব্দগুলো</h2>
+    <div class="">${createElements(word.synonyms)}</div>
+</div>
+```
+ekhane : ekta array (word.synonyms)  send kortechi and seta string return korche
 
 
 
 
 
-// now Modal use
+
+
+
+// now Modal use - when displayed word card 
+zokhon kew info button e click korbe ....tokhon ekta specific word details load korte hobe
+
 
 
 
