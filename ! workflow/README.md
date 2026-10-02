@@ -129,12 +129,26 @@ ekhane : ekta array (word.synonyms)  send kortechi and seta string return korche
 
 
 
+// spinner user-- word container er upor e as a section flex&center
 
+```
+Create a function 
+const manageSpinner = (status) => {
+    if (status == true) {
+        document.getElementById("spinner").classList.remove("hidden");
+        document.getElementById("word-container").classList.add("hidden")
+    }
+    else {
+        document.getElementById("word-container").classList.remove("hidden")
+        document.getElementById("spinner").classList.add("hidden");
+    }
+}
 
+// call where needed
+// word load er shurur somoy true(spinner show)....and after display-> load (false)...
+//array.length === 0  > return er age.... manageSpinner(false)....spinner hidden
 
-// now Modal use - when displayed word card 
-zokhon kew info button e click korbe ....tokhon ekta specific word details load korte hobe
-
+```
 
 
 
