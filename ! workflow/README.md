@@ -179,6 +179,23 @@ when clicked search button , remove level active
 
 
 
+### pronounceWord
+```
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+```
+
+onclick="pronounceWord(${word.word})"
+if it doesn't work--- try below code
+onclick="pronounceWord('${word.word}')"
+
+
+
+
+
 
 
 
