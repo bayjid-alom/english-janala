@@ -152,6 +152,33 @@ const manageSpinner = (status) => {
 
 
 
+// search - daisy
+ui first -- then after calling loadLevel() -- 
+
+```
+document.getElementById("btn-search").addEventListener("click", () => {
+    removeActive()
+    const input = document.getElementById("input-search");
+    const searchValue = input.value.trim().toLowerCase()
+    console.log(searchValue);
+
+    fetch("https://openapi.programming-hero.com/api/words/all")
+        .then(response => response.json())
+        .then(data => {
+            const allWords = data.data;
+            const filterWords = allWords.filter(word => word.word.toLowerCase().includes(searchValue))
+            displayLevelWord(filterWords)
+        })
+});
+```
+
+-fetch all --> https://openapi.programming-hero.com/api/words/all
+when clicked search button , remove level active
+
+
+
+
+
 
 
 
